@@ -8,13 +8,21 @@ To address this problem, we propose a new feature called Multiversal pictures, w
 
 We expected that our approach increases the accuracy of fake news detection compared to existing methods.
 
-## Usage
-You can find the execution in `.ipynb` files in corresponding folders.
+## What were done
+
+1. Image retrieving
+2. Feature extraction
+3. Similarity calcucaltion
 
 ## Main results
 
+fake | en-de | en-es | en-fr | en-ru
+|--- | --- | --- | --- | --- |
+0 | 0.6609 | 0.6239 | 0.6390 | 0.5214
+1 | 0.5816 | 0.6858 | 0.6461 | 0.5265
+
 ## Conclusion
-- Image features allow to increase quality of fake news detection
+- Image features doesn't show significant correlation with truth nature
 - Results should be validated on more datasets
 - CLIP similarities may be added to the feature set
 
