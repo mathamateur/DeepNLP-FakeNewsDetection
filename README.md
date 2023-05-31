@@ -17,7 +17,7 @@ We have experimented with a dataset Celebrity proposed by [Veronica Perez-Rosas 
 1. News translation
 We translate news from the original language - English, to the 4 other languages - Deutsch, Español, French, Russian. We utilize GoogleTranslator API to automize the process of translation.
 2. Image retrieving
-For all five languages we retrieve images related to the headings of the news. By default, we download 10 images for each case, however for some requests there are exist less then 10 relevant images. Also, we experiment only with a subset of the initial dataset - 40 fake and 40 legit news. To do so, we use GoogleSearch API.
+For all five languages we retrieve images related to the headings of the news. By default, we download 10 images for each case, however for some requests there are exist less then 10 relevant images. Also, we experiment only with a subset of the initial dataset - 40 fake and 40 legit news. To do so, we use GoogleSearch API. The resulting images can be found [here](https://drive.google.com/drive/folders/1gF5rgNA-hEEVk_0VBkO4z9BQ9xZ5JZB0?usp=sharing).
 3. Feature extraction
 We calculate embeddings for the each image through CLIP model with ViT/B32 as a backbone.
 4. Similarity calcucaltion
