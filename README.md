@@ -8,22 +8,40 @@ To address this problem, we propose a new feature called Multiversal pictures, w
 
 We expected that our approach increases the accuracy of fake news detection compared to existing methods.
 
+## Dataset
+
+We have experimented with a dataset Celebrity proposed by [Veronica Perez-Rosas et al., 2017](https://arxiv.org/pdf/1708.07104v1.pdf). This dataset contains 250 fake and 250 legit news.
+
 ## What were done
 
-1. Image retrieving
-2. Feature extraction
-3. Similarity calcucaltion
+1. News translation
+We translate news from the original language - English, to the 4 other languages - Deutsch, Español, French, Russian. We utilize GoogleTranslator API to automize the process of translation.
+2. Image retrieving
+For all five languages we retrieve images related to the headings of the news. By default, we download 10 images for each case, however for some requests there are exist less then 10 relevant images. Also, we experiment only with a subset of the initial dataset - 40 fake and 40 legit news. To do so, we use GoogleSearch API.
+3. Feature extraction
+We calculate embeddings for the each image through CLIP model with ViT/B32 as a backbone.
+4. Similarity calcucaltion
+Finally, to validate our hypothesis, we measure the cosine similarity between vector representations for the original language and embeddings for the other languages. For each pair of languages we average the similarities.
 
-## Main results
+## Results
 
 fake | en-de | en-es | en-fr | en-ru
 |--- | --- | --- | --- | --- |
 0 | 0.6609 | 0.6239 | 0.6390 | 0.5214
 1 | 0.5816 | 0.6858 | 0.6461 | 0.5265
 
-## Conclusion
+Table 1. Cosine similarity scores between images for the original headings and headings which were translated to the other languages.
+
+fake | score
+| --- | --- |
+0 | 0.6113
+1 | 0.6100
+
+Table 2. Averaged cosine similarity scores between fake and legit news.
+
+## Conclusions
 - Image features doesn't show significant correlation with truth nature
-- Results should be validated on more datasets
+- Results should be validated on more datasets. Images for news about celebrities typically contains themselves without any connection with truth nature of the news.
 - CLIP similarities may be added to the feature set
 
 ## Team:
