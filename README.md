@@ -27,22 +27,22 @@ Finally, to validate our hypothesis, we measure the cosine similarity between ve
 
 fake | en-de | en-es | en-fr | en-ru
 |--- | --- | --- | --- | --- |
-0 | 0.6609 | 0.6239 | 0.6390 | 0.5214
-1 | 0.5816 | 0.6858 | 0.6461 | 0.5265
+0 | 0.6363 | 0.6478 | 0.6541 | 0.5484
+1 | 0.5799 | 0.6335 | 0.6285 | 0.5767
 
 Table 1. Cosine similarity scores between images for the original headings and headings which were translated to the other languages.
 
 fake | score
 | --- | --- |
-0 | 0.6113
-1 | 0.6100
+0 | 0.6217
+1 | 0.6046
 
 Table 2. Averaged cosine similarity scores between fake and legit news.
 
 ## Conclusions
-- Image features doesn't show significant correlation with truth nature
-- Results should be validated on more datasets. Images for news about celebrities typically contains themselves without any connection with truth nature of the news.
-- CLIP similarities may be added to the feature set
+- Seems like image features actually can help with fake detection task, because similarities for legit news is higher then for fake news
+- Results should be validated on other datasets datasets. Images for news about celebrities typically contains themselves without any connection with truth nature of the news. Also our train sample doesn't fully cover the Celebrity dataset, so it should be extended
+- CLIP similarities might be added to the feature set
 
 ## Team:
 - Alexander Kharitonov
